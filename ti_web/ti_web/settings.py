@@ -150,3 +150,4 @@ EMAIL_HOST_PASSWORD = 'pmso dwly aflk pdmc'  # Your email password or app-specif
 DEFAULT_FROM_EMAIL = 'muhamedabdodeveloper@gmail.com'  # Default sender email
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
