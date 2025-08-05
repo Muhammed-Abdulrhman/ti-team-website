@@ -86,7 +86,11 @@ import dj_database_url
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        **dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=600)
+        'NAME': 'database_name',
+        'USER': 'username',
+        'PASSWORD': 'password',
+        'HOST': 'host',
+        'PORT': '5432',
     }
 }
 
@@ -149,5 +153,6 @@ EMAIL_HOST_USER = 'muhamedabdodeveloper@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'pmso dwly aflk pdmc'  # Your email password or app-specific password
 DEFAULT_FROM_EMAIL = 'muhamedabdodeveloper@gmail.com'  # Default sender email
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
