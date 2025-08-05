@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-yxr)%h(h(-+4*#27n72xyo(&s$ia%_!kfd81ph13inqbegd^p0
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['https://ti-team-website-production.up.railway.app/']
+#ALLOWED_HOSTS = ['']
+
+ALLOWED_HOSTS = [
+    os.environ.get('https://ti-team-website-production.up.railway.app/', '*'),
+    'localhost',
+    '127.0.0.1'
+]
 CSRF_TRUSTED_ORIGINS = ['https://ti-team-website-production.up.railway.app']
 
 
@@ -149,4 +155,5 @@ EMAIL_HOST_USER = 'muhamedabdodeveloper@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'pmso dwly aflk pdmc'  # Your email password or app-specific password
 DEFAULT_FROM_EMAIL = 'muhamedabdodeveloper@gmail.com'  # Default sender email
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
