@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'ti_web.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 import dj_database_url
-DATABASE_URL = postgres://username:password@host:5432/database_name
+DATABASE_URL = postgres://postgres:abc123@containers.up.railway.app:5432/ti_team_db
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -154,6 +154,7 @@ EMAIL_HOST_USER = 'muhamedabdodeveloper@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'pmso dwly aflk pdmc'  # Your email password or app-specific password
 DEFAULT_FROM_EMAIL = 'muhamedabdodeveloper@gmail.com'  # Default sender email
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 
