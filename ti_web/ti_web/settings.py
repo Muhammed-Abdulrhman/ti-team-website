@@ -84,7 +84,10 @@ WSGI_APPLICATION = 'ti_web.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        **dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=600)
+    }
 }
 
 
@@ -146,3 +149,4 @@ EMAIL_HOST_USER = 'muhamedabdodeveloper@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'pmso dwly aflk pdmc'  # Your email password or app-specific password
 DEFAULT_FROM_EMAIL = 'muhamedabdodeveloper@gmail.com'  # Default sender email
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
