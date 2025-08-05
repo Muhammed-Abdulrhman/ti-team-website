@@ -19,6 +19,7 @@ from django.urls import path
 from projects import views
 from django.conf.urls.static import static
 from django.conf import settings
+
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('project/<int:project_id>/', views.project_view, name='project'),
@@ -28,3 +29,7 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # للإنتاج على Railway
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
